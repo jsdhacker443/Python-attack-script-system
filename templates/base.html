@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %} {% endblock %}</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <style>
+
+        nav {
+            background-color: #333;
+            overflow: hidden;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+
+        nav ul li {
+            float: left;
+        }
+
+        nav ul li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        /* 下拉菜单样式 */
+        nav ul li ul {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+        nav ul li ul li {
+            float: none;
+            border-bottom: 1px solid #ccc;
+        }
+
+        nav ul li ul li a {
+            color: black;
+            padding: 12px 16px;
+        }
+
+        /* 显示下拉菜单 */
+        nav ul li:hover > ul {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="/home">首页</a></li>
+
+                <li><a href="#">加密模块</a>
+                    <ul>
+                        <li><a href="/mybase64">Base64编码</a></li>
+                        <li><a href="/mymd5">MD5算法</a></li>
+                        <li><a href="/aes">AES加密</a></li>
+                        <li><a href="/myrsa">RSA加密</a></li>
+                        <li><a href="/lesuo">勒索病毒模拟</a></li>
+                    </ul>
+                </li>
+
+                <li><a href="#">爆破模块</a>
+                    <ul>
+                        <li><a href="/bomb_wifi">WiFi密码爆破</a></li>
+                        <li><a href="/bomb_rar">RAR压缩文件爆破</a></li>
+                        <li><a href="/bomb_ssh">SSH密码爆破</a></li>
+                        <li><a href="/bomb_web">网站账户爆破</a></li>
+                    </ul>
+                </li>
+
+                <li><a href="#">扫描模块</a>
+                    <ul>
+                        <li><a href="/pscan_socket">基于Socket的端口扫描</a></li>
+                        <li><a href="/pscan_scapy">基于Scapy的端口扫描</a></li>
+                        <li><a href="/ipscan_ping">基于Ping的IP扫描</a></li>
+                        <li><a href="/ipscan_scapy">基于Scapy的IP扫描</a></li>
+                        <li><a href="/domscan_ping">基于Ping的子域名扫描</a></li>
+                        <li><a href="/domscan_socket">基于Socket的子域名扫描</a></li>
+                        <li><a href="/webinfo">Web站点信息搜集</a></li>
+                        <li><a href="/xss_scan">XSS漏洞扫描</a></li>
+                    </ul>
+                </li>
+
+                 <li><a href="#">泛洪攻击</a>
+                    <ul>
+                        <li><a href="#">TCP三次握手泛洪</a></li>
+                        <li><a href="#">Scapy半连接泛洪</a></li>
+                        <li><a href="#">ICMP泛洪</a></li>
+                        <li><a href="#">MAC地址泛洪</a></li>
+                        <li><a href="#">ARP泛洪</a></li>
+                        <li><a href="#">ARP欺骗</a></li>
+                        <li><a href="/flood_mix">混合模式</a></li>
+                    </ul>
+                </li>
+
+                <li><a href="#">爬虫模块</a>
+                    <ul>
+                        <li><a href="/spider_skin">图片爬虫</a></li>
+                        <li><a href="/spider_book">文字爬虫</a></li>
+                        <li><a href="/spider_link">超链接爬虫</a></li>
+                    </ul>
+                </li>
+
+<!--                <li><a href="/spider">爬虫模块</a></li>-->
+                <li><a href="/dos">DOS检测</a></li>
+                <li><a style="color:white" href="http://127.0.0.1:5000/log_in">Log Out</a></li>
+
+
+
+            </ul>
+
+        </nav>
+
+    </header>
+
+    <div class="container">
+        {% block content %} {% endblock %}
+    </div>
+
+
+</body>
+</html>

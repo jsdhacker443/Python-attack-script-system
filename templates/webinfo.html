@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h1>{% block title %} Web站点信息搜集 {% endblock %}</h1>
+    <form method="post" action="/webinfo_do">
+        <label for="plaintext">请输入目标域名:</label>
+        <input type="text" id="target" name="target" required>
+        <br>
+        <input type="submit" value="Scan">
+    </form>
+
+    <h3>Results</h3>
+    <p>{{ result }}</p>
+{% endblock %}

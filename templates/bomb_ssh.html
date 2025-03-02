@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h1>{% block title %} SSH密码爆破 {% endblock %}</h1>
+    <form method="post" action="/bomb_ssh_do">
+        <label for="plaintext">目标主机IP:</label>
+        <input type="text" id="target" name="target" required>
+        <br>
+        <input type="submit" value="Bomb!">
+    </form>
+
+    <h3>Results</h3>
+    <p>{{ result }}</p>
+{% endblock %}

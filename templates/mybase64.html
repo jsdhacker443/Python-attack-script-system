@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h1>{% block title %} Base64编码 {% endblock %}</h1>
+     <h2>Encrypt</h2>
+    <form method="post" action="/base64_encrypt">
+        <label for="plaintext">Plaintext:</label>
+        <input type="text" id="plaintext" name="plaintext" required>
+        <br>
+        <input type="submit" value="Encrypt">
+    </form>
+
+    <h2>Decrypt</h2>
+    <form method="post" action="/base64_decrypt">
+        <label for="ciphertext">Ciphertext:</label>
+    <input type="text" id="ciphertext" name="ciphertext" required>
+    <br>
+    <input type="submit" value="Decrypt">
+    </form>
+
+    <h3>Results</h3>
+    <p>Encryption Result: {{ encrypt_result }}</p>
+    <p>Decryption Result: {{ decrypt_result }}</p>
+{% endblock %}

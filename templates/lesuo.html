@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h1>{% block title %} 模拟勒索病毒 {% endblock %}</h1>
+     <h2>Encrypt</h2>
+    <form method="post" action="/lesuo_encrypt">
+        <label for="plaintext">加密文件路径:</label>
+        <input type="text" id="plaintext" name="plaintext" required>
+        <br>
+        <input type="submit" value="Encrypt">
+    </form>
+
+    <h2>Decrypt</h2>
+    <form method="post" action="/lesuo_decrypt">
+        <label for="ciphertext">解密文件路径:</label>
+    <input type="text" id="ciphertext" name="ciphertext" required>
+    <br>
+    <input type="submit" value="Decrypt">
+    </form>
+
+    <h3>Results</h3>
+    <p>文件状态: {{ status }}</p>
+{% endblock %}

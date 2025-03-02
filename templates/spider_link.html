@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h1>{% block title %} 超链接爬虫 {% endblock %}</h1>
+    <form method="post" action="/spider_link_do">
+        <label for="plaintext">请输入目标网站url:</label>
+        <input type="text" id="target" name="target" required>
+        <br>
+        <input type="submit" value="Spider!">
+    </form>
+
+    <h3>页面文件保存目录：D:\Softwares\PyCharm2022\MyProjects\AFinal\page</h3>
+    <p>程序状态：{{result}}</p>
+{% endblock %}

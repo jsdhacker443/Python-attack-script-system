@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h1>{% block title %} 基于Ping命令的IP扫描 {% endblock %}</h1>
+    <form method="post" action="/ipscan_ping_do">
+        <label for="plaintext">目标网段:</label>
+        <input type="text" id="target" name="target" required>
+        <br>
+        <input type="submit" value="Scan">
+    </form>
+
+    <h3>Results</h3>
+    <p>{{ result }}</p>
+{% endblock %}

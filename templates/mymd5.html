@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h1>{% block title %} MD5摘要算法 {% endblock %}</h1>
+     <h2>Encrypt</h2>
+    <form method="post" action="/md5_encrypt">
+        <label for="plaintext">Plaintext:</label>
+        <input type="text" id="plaintext" name="plaintext" required>
+        <br>
+        <input type="submit" value="Encrypt">
+    </form>
+
+    <h3>Results</h3>
+    <p>MD5摘要值为: {{ encrypt_result }}</p>
+{% endblock %}

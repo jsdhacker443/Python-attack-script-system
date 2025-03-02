@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h1>{% block title %} 图片爬虫 {% endblock %}</h1>
+    <form action="spider_skin_do" method="post">
+        <label>请输入爬取网址的url：</label><br>
+        <input type="text" id="target" name="target" required>
+        <label>请输入保存地址：</label><br>
+        <input type="text" id="locat" name="locat" required>
+        <input type="submit" value="Spider!">
+    </form>
+{% endblock %}

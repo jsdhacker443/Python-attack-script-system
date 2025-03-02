@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h1>{% block title %} 基于Socket的子域名扫描 {% endblock %}</h1>
+    <form method="post" action="/domscan_socket_do">
+        <label for="plaintext">请输入目标二级域名:</label>
+        <input type="text" id="target" name="target" required>
+        <br>
+        <input type="submit" value="Scan">
+    </form>
+
+    <h3>Results</h3>
+    <p>{{ result }}</p>
+{% endblock %}
